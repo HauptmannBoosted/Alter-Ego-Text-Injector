@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyexuve3n4nk4"]
+
+[ext_resource type="Script" path="res://MainScene.gd" id="1_7kwbx"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_7kwbx")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -490.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="ButtonPush" type="Button" parent="."]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 552.0
+offset_right = 445.0
+offset_bottom = 613.0
+text = "Push to preset"
+
+[node name="ButtonOneWordPerLine" type="Button" parent="."]
+layout_mode = 0
+offset_left = 193.0
+offset_top = 460.0
+offset_right = 444.0
+offset_bottom = 524.0
+text = "One word per line"
+
+[node name="ButtonClose" type="Button" parent="."]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 557.0
+offset_right = 151.0
+offset_bottom = 614.0
+text = "Exit Application"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+mode = 3
+title = "select preset to inject text into"
+initial_position = 2
+ok_button_text = "Select"
+mode_overrides_title = false
+file_mode = 0
+access = 2
+filters = PackedStringArray("*.ariap")
+show_hidden_files = true
+
+[connection signal="pressed" from="ButtonPush" to="." method="_on_button_push_pressed"]
+[connection signal="pressed" from="ButtonOneWordPerLine" to="." method="_on_button_one_word_per_line_pressed"]
+[connection signal="pressed" from="ButtonClose" to="." method="_on_button_close_pressed"]
+[connection signal="canceled" from="FileDialog" to="." method="_on_file_dialog_canceled"]
