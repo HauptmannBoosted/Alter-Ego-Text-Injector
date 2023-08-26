@@ -1,8 +1,8 @@
-# Alter-Ego-Text-Injector
+# Alter-Ego-Text-Injector (Godot Project)
 quick and dirty tool to insert text into the Alter/Ego real-time singing synthesizer VST plugin presets
 
 
-This is a tool to inject text from a textfield directly into Alter/Ego preset files.
+This is a tool made to inject text from a textfield directly into Alter/Ego preset files.
 
 It works by replacing one line in the saved preset, which holds user entered text.
 
